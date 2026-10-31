@@ -3,8 +3,8 @@
 
 #include <input/processors.dtsi>
 #include <zephyr/dt-bindings/input/input-event-codes.h>
-#include <behaviors.dtsi>
 #include <behaviors/runtime-sensor-rotate.dtsi>
+#include <behaviors.dtsi>
 #include <dt-bindings/zmk/bt.h>
 #include <dt-bindings/zmk/keys.h>
 #include <dt-bindings/zmk/outputs.h>
@@ -37,7 +37,7 @@
         };
     };
 
-   combos {
+    combos {
         compatible = "zmk,combos";
 
         softoff {
@@ -52,10 +52,10 @@
         default_layer {
             display-name = "QWERTY";
             bindings = <
-&kp TAB    &kp Q  &kp W  &kp E     &kp R  &kp T                               &kp UP                &kp Y        &kp U  &kp I      &kp O    &kp P     &kp BSPC
-&td0       &kp A  &kp S  &kp D     &kp F  &kp G                     &kp LEFT  &kp ENTER  &kp RIGHT  &kp H        &kp J  &kp K      &kp L    &kp SEMI  &kp SQT
-&kp LCTRL  &kp Z  &kp X  &kp C     &kp V  &kp B        &kp SPACE              &kp DOWN              &kp N        &kp M  &kp COMMA  &kp DOT  &kp FSLH  &kp ESC
-                         &kp LGUI  &mo 1  &lt 3 SPACE                                               &lt 3 ENTER  &mo 2  &kp RALT
+&kp TAB     &kp Q           &kp W           &kp E             &kp R  &kp T                                 &kp UP                &kp Y                   &kp U  &kp I         &kp O           &kp P              &kp BSPC
+&kt ESCAPE  &mt LEFT_ALT A  &mt LEFT_GUI S  &kp D             &kp F  &kp G                       &kp LEFT  &kp ENTER  &kp RIGHT  &kp H                   &kp J  &kp K         &mt LEFT_GUI L  &mt LEFT_ALT SEMI  &kp SQT
+&kp LCTRL   &kp Z           &kp X           &kp C             &kp V  &kp B         &kp C_MUTE              &kp DOWN              &kp N                   &kp M  &kp COMMA     &kp DOT         &kp FSLH           &kp RIGHT_SHIFT
+                                            &kp LEFT_CONTROL  &mo 1  &lt 3 RETURN                                                &mt LEFT_CONTROL SPACE  &mo 2  &kp LEFT_ALT
             >;
 
             sensor-bindings = <&rsr_vol &rsr_trans>;
@@ -76,10 +76,10 @@
         raise_layer {
             display-name = "SYMBOL";
             bindings = <
-&trans  &kp EXCL      &kp AT        &kp HASH   &kp DLLR   &kp PRCNT                            &mmv MOVE_UP                     &kp CARET  &kp AMPS   &kp ASTRK  &kp LPAR  &kp RPAR  &kp BSPC
-&trans  &bt BT_CLR    &mkp LCLK     &mkp MCLK  &mkp RCLK  &mkp MB4             &mmv MOVE_LEFT  &mkp LCLK       &mmv MOVE_RIGHT  &kp MINUS  &kp EQUAL  &kp LBKT   &kp RBKT  &kp BSLH  &kp GRAVE
-&trans  &out OUT_USB  &out OUT_BLE  &none      &none      &mkp MB5   &trans                    &mmv MOVE_DOWN                   &kp UNDER  &kp PLUS   &kp LBRC   &kp RBRC  &kp PIPE  &kp TILDE
-                                    &trans     &trans     &kp SPACE                                                             &kp RET    &trans     &trans
+&kp TAB         &kp EXCL          &kp AT             &kp HASH              &kp DLLR               &kp PRCNT                             &mmv MOVE_UP                     &kp CARET                   &kp AMPS        &kp ASTRK  &trans    &trans    &kp BSPC
+&kp ESC         &kp LEFT_BRACKET  &kp RIGHT_BRACKET  &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS  &trans                &mmv MOVE_LEFT  &mkp LCLK       &mmv MOVE_RIGHT  &kp LC(PLUS)                &kp UNDERSCORE  &kp LBKT   &kp PIPE  &kp BSLH  &kp TILDE
+&kp LEFT_SHIFT  &out OUT_USB      &out OUT_BLE       &kp LS(LEFT_BRACKET)  &kp LS(RIGHT_BRACKET)  &trans      &trans                    &mmv MOVE_DOWN                   &kp MINUS                   &trans          &trans     &trans    &trans    &kp GRAVE
+                                                     &kp LEFT_CONTROL      &kp LEFT_ALT           &kp RETURN                                                             &mt LEFT_CONTROL BACKSPACE  &trans          &trans
             >;
 
             sensor-bindings = <&rsr_vol &rsr_trans>;
