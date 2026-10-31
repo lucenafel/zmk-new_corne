@@ -64,8 +64,8 @@
             display-name = "NUMBER";
             bindings = <
 &trans          &kp N1        &kp N2        &kp N3            &kp N4        &kp N5                                    &mmv MOVE_UP                     &kp N6                      &kp N7         &kp N8        &kp N9     &kp N0           &kp BSPC
-&trans          &trans        &trans        &trans            &trans        &trans                    &mmv MOVE_LEFT  &mkp LCLK       &mmv MOVE_RIGHT  &kp LEFT                    &kp DOWN       &kp UP        &kp RIGHT  &kp LA(TAB)      &kp DELETE
-&bt BT_CLR_ALL  &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2      &trans        &trans      &kp C_MUTE                    &mmv MOVE_DOWN                   &kp HOME                    &kp PAGE_DOWN  &kp PAGE_UP   &kp END    &kp LS(LA(TAB))  &trans
+&trans          &none         &none         &none             &none         &none                     &mmv MOVE_LEFT  &mkp LCLK       &mmv MOVE_RIGHT  &kp LEFT                    &kp DOWN       &kp UP        &kp RIGHT  &kp LA(TAB)      &kp DELETE
+&bt BT_CLR_ALL  &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2      &none         &none       &kp C_MUTE                    &mmv MOVE_DOWN                   &kp HOME                    &kp PAGE_DOWN  &kp PAGE_UP   &kp END    &kp LS(LA(TAB))  &trans
                                             &kp LEFT_CONTROL  &kp LEFT_ALT  &kp RETURN                                                                 &mt LEFT_CONTROL BACKSPACE  &mo 3          &kp LEFT_ALT
             >;
 
@@ -75,9 +75,9 @@
         raise_layer {
             display-name = "SYMBOL";
             bindings = <
-&kp TAB         &kp EXCL          &kp AT             &kp HASH              &kp DLLR               &kp PRCNT                             &mmv MOVE_UP                     &kp CARET                   &kp AMPS        &kp ASTRK  &trans    &trans    &kp BSPC
-&kp ESC         &kp LEFT_BRACKET  &kp RIGHT_BRACKET  &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS  &trans                &mmv MOVE_LEFT  &mkp LCLK       &mmv MOVE_RIGHT  &kp PLUS                    &kp UNDERSCORE  &kp EQUAL  &kp PIPE  &kp BSLH  &kp TILDE
-&kp LEFT_SHIFT  &trans            &trans             &kp LS(LEFT_BRACKET)  &kp LS(RIGHT_BRACKET)  &trans      &trans                    &mmv MOVE_DOWN                   &kp MINUS                   &trans          &trans     &trans    &trans    &kp GRAVE
+&kp TAB         &kp EXCL          &kp AT             &kp HASH              &kp DLLR               &kp PRCNT                             &mmv MOVE_UP                     &kp CARET                   &kp AMPS        &kp ASTRK  &none     &none     &kp BSPC
+&kp ESC         &kp LEFT_BRACKET  &kp RIGHT_BRACKET  &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS  &none                 &mmv MOVE_LEFT  &mkp LCLK       &mmv MOVE_RIGHT  &kp PLUS                    &kp UNDERSCORE  &kp EQUAL  &kp PIPE  &kp BSLH  &kp TILDE
+&kp LEFT_SHIFT  &none             &none              &kp LS(LEFT_BRACKET)  &kp LS(RIGHT_BRACKET)  &none       &trans                    &mmv MOVE_DOWN                   &kp MINUS                   &none           &none      &none     &none     &kp GRAVE
                                                      &kp LEFT_CONTROL      &kp LEFT_ALT           &kp RETURN                                                             &mt LEFT_CONTROL BACKSPACE  &trans          &trans
             >;
 
@@ -88,12 +88,21 @@
             display-name = "Fn";
             bindings = <
 &studio_unlock  &kp F1      &kp F2     &kp F3       &kp F4     &kp F5                                  &mmv MOVE_UP                     &kp F6        &kp F7        &kp F8            &kp F9      &kp F10          &kp F11
-&trans          &trans      &mkp LCLK  &mkp MCLK    &mkp RCLK  &mkp MB4                &mmv MOVE_LEFT  &mkp LCLK       &mmv MOVE_RIGHT  &bootloader   &kp K_PREV    &kp K_PLAY_PAUSE  &kp K_NEXT  &kp PRINTSCREEN  &kp F12
-&trans          &sys_reset  &trans     &bootloader  &trans     &mkp MB5  &kp C_MUTE                    &mmv MOVE_DOWN                   &out OUT_BLE  &out OUT_USB  &bootloader       &sys_reset  &kp SCROLLLOCK   &kp PAUSE_BREAK
+&none           &none       &mkp LCLK  &mkp MCLK    &mkp RCLK  &mkp MB4                &mmv MOVE_LEFT  &mkp LCLK       &mmv MOVE_RIGHT  &bootloader   &kp K_PREV    &kp K_PLAY_PAUSE  &kp K_NEXT  &kp PRINTSCREEN  &kp F12
+&none           &sys_reset  &none      &bootloader  &none      &mkp MB5  &kp C_MUTE                    &mmv MOVE_DOWN                   &out OUT_BLE  &out OUT_USB  &bootloader       &sys_reset  &kp SCROLLLOCK   &kp PAUSE_BREAK
                                        &trans       &kp LALT   &trans                                                                   &trans        &trans        &trans
             >;
 
             sensor-bindings = <&rsr_vol &rsr_trans>;
+        };
+
+        layer_4 {
+            bindings = <
+&trans  &trans  &trans  &trans  &trans  &trans                    &trans          &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans            &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans  &trans            &trans          &trans  &trans  &trans  &trans  &trans  &trans
+                        &trans  &trans  &trans                                    &trans  &trans  &trans
+            >;
         };
     };
 };
